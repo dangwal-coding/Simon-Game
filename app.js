@@ -38,6 +38,7 @@ function levelUp() {
   let randColor = btns[randIdx];
   let randBtn = document.querySelector(`.${randColor}`);
 
+  //chose random color and add color css
   console.log(randIdx);
   console.log(randColor);
   console.log(randBtn);
