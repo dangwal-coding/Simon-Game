@@ -25,3 +25,11 @@ body {
 .purple {
   background-color: #4e72de;
 }
+
+.flash {
+  background-color: white;
+}
+
+.userflash {
+  background-color: green;
+}
