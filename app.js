@@ -5,8 +5,10 @@ let btns = ["yellow", "red", "purple", "green"];
 
 let started = false;
 let level = 0;
+highestscore = 0;
 
-let h2 = document.querySelector("h2");
+let scrlev = document.querySelector(".scrlev");
+let score = document.querySelector(".score");
 
 document.addEventListener("keypress", function () {
   if (started == false) {
@@ -33,12 +35,15 @@ function userFlash(btn) {
 function levelUp() {
   userSeq = [];
   level++;
-  h2.innerText = `level ${level}`;
-
+  scrlev.innerText = `level ${level}`;
   let randIdx = Math.floor(Math.random() * 1);
   let randColor = btns[randIdx];
   let randBtn = document.querySelector(`.${randColor}`);
-
+  if (level > highestscore) {
+    highestscore = level;
+  }
+  // //print highest score
+  score.innerText = `Highestscore is ${highestscore}`;
   // //chose random color and add color css
   // console.log(randIdx);
   // console.log(randColor);
@@ -54,7 +59,7 @@ function checkAns(idx) {
       setTimeout(levelUp, 1000);
     }
   } else {
-    h2.innerHTML = `Game over! your score is <b>${level} </b> <br>press any key to Restart. `;
+    scrlev.innerHTML = `Game over! your score is <b>${level} </b> <br>press any key to Restart. `;
     document.querySelector("body").style.backgroundColor = "red";
     setTimeout(function () {
       document.querySelector("body").style.backgroundColor = "white";
