@@ -90,3 +90,5 @@ function reset() {
   userSeq = [];
   level = 0;
 }
+
+//complete at sun, july14 at 9:18 pm
